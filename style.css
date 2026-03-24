@@ -213,3 +213,88 @@ a{
     }
 
 }
+
+/* ── GG.deals price block ──────────────────────────────────────────────────── */
+
+#ggdeals-prices {
+    width: 100%;
+    margin-top: 4px;
+}
+
+.ggdeals-block {
+    width: 100%;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fafafa;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Header bar mimicking a terminal titlebar */
+.ggdeals-block::before {
+    content: 'gg.deals prices';
+    display: block;
+
+    font-size: 1em;
+    letter-spacing: 0.08em;
+    padding: 20px 14px;
+    border-bottom: 1px solid gray;
+}
+
+.ggdeals-block .block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px dashed #e0e0e0;
+    gap: 8px;
+}
+
+.ggdeals-block .block:last-child {
+    border-bottom: none;
+}
+
+/* Label on the left */
+.ggdeals-block .block h1:first-child {
+    font-size: 0.72em;
+    font-weight: 500;
+    color: #888;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Price on the right */
+.ggdeals-block .block h1:last-child {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+/* First row = official / retail price */
+.ggdeals-block .block:first-of-type h1:last-child {
+    color: #2a6e2a;
+    background: #d8ffcf;
+    padding: 3px 10px;
+    border-radius: 4px;
+    border: 1px solid #b2e8a8;
+}
+
+/* Second row = keyshop price */
+.ggdeals-block .block:last-of-type h1:last-child {
+    color: #7a4200;
+    background: #ffe9dc;
+    padding: 3px 10px;
+    border-radius: 4px;
+    border: 1px solid #f0c8a8;
+}
+
+/* Loading / error states */
+#ggdeals-prices span {
+    display: block;
+    font-size: 0.78em;
+    color: #aaa;
+    padding: 6px 2px;
+}
