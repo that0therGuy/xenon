@@ -216,7 +216,7 @@ async function fetch_ggdeals_prices(steamAppId) {
     try {
         const target = `https://api.gg.deals/v1/prices/by-steam-app-id/?ids=${steamAppId}&key=${GG_DEALS_API_KEY}&region=us`
         const url = `https://corsproxy.io/?url=${encodeURIComponent(target)}`
-        const response = await fetch(url)
+        const response = await fetch(target)
         const json = await response.json()
 
         const gameData = json?.data?.[String(steamAppId)] ?? Object.values(json?.data ?? {})[0]
