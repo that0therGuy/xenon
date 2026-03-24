@@ -214,7 +214,6 @@ a{
 
 }
 
-/* ── GG.deals price block ──────────────────────────────────────────────────── */
 
 #ggdeals-prices {
     width: 100%;
@@ -230,7 +229,6 @@ a{
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* Header bar mimicking a terminal titlebar */
 .ggdeals-block::before {
     content: 'gg.deals prices';
     display: block;

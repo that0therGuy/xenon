@@ -2,8 +2,6 @@ let inventory= new Object()
 let filename='hello.txt'
 let id = 0;
 
-// ── GG.deals API key ──────────────────────────────────────────────────────────
-// Get a free key at https://gg.deals/api/ (personal/hobby use is free)
 const GG_DEALS_API_KEY = 'SiDijFD5OmudA7TaT0QxQrvvmPm8f24l';
 
 async function read(){
@@ -105,7 +103,6 @@ function render(){
             let game_name = game.innerText
             let url = `https://corsproxy.io/?https://store.steampowered.com/api/storesearch/?term=${game_name}&l=english&cc=US`
 
-            // Show a loading state immediately
             let right = document.querySelector('.rightcontent')
             right.innerHTML = `<p style="opacity:0.5">Loading ${game_name}…</p>`
 
@@ -117,7 +114,6 @@ function render(){
                         right.innerHTML = `<p style="opacity:0.5">No results found for "${game_name}"</p>`
                         return
                     }
-                    // Show Steam info first, then fetch GG.deals prices
                     info_show(info)
                     fetch_ggdeals_prices(info.id)
                 })
@@ -232,7 +228,6 @@ async function fetch_ggdeals_prices(steamAppId) {
         const p = gameData.prices
         const currency = p.currency
 
-        // Build a clean price table
         pricesDiv.innerHTML = `
 
             <div class="ggdeals-block">
